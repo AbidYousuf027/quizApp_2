@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-center {
+  cursor: pointer;
+}
+
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('./image/quizImage.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%  100%;
+}
+
+
+.playBtn {
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 60px;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.playBtn:hover {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); 
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+.btn:hover {
+    background-color: #C0392B;
+    transition: background-color 0.3s ease;
+  }
+  .shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+   
+@media (max-width: 768px) {
+    #quizContainer h4 {
+      font-size: 1.25rem; 
+    }
+    
+    .container {
+      padding: 1rem; 
+    }
+  
+    .btn {
+      font-size: 1rem; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    #quizheader h2 {
+      font-size: 1.5rem;
+    }
+  
+    .fs-1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    h4 {
+      font-size: 1rem; /* Adjust question font size on mobile */
+    }
+    .btn {
+      width: 100%; /* Ensure buttons are full width */
+    }
+  }
+  
+
+
+
+
+ 

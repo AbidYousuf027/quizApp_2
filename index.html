@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+ <div id="imgCont" class="imageContainer text-center">
+  <button id="play" class="playBtn btn btn-lg" style="background-color: #E74C3C; color: white;">Play</button>
+</div>
+
+
+<div id="quizContainer" class="container mt-5" style="display: none; background-color: #F4F6F7;">
+  <h4 class="text-center text-black fw-bold p-2">Press any key to start QUIZ</h4>
+
+  
+  <div id="quizheader" class="container">
+    <div id="allQuiz" class="p-1">
+      <div class="p-4 rounded shadow text-center" style="background-color: #2E4053;">
+        <h2 class="text-white fw-bold">QUIZ APP</h2>
+        <h4 class="text-end">
+          <span class="text-white fw-bold" id="minutes">14</span>
+          <span class="text-white fw-bold">:</span>
+          <span class="text-white fw-bold" id="seconds">60</span>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+<div class="p-1">
+    <div class="container rounded shadow" style="background-color: #1ABC9C;">
+      <div class="p-4 d-flex justify-content-between align-items-center">
+        <h3 id="displayQuestion" class="text-white fw-bold">Question</h3>
+        <h3 class="text-end">
+          <span id="runningQueNum" class="fs-1 text-white fw-bold">0</span>
+          <span class="text-white fw-bold">/</span>
+          <span id="totalQueNum" class="text-white fw-bold">12</span>
+        </h3>
+      </div>
+    </div>
+
+
+    <div class="p-2 mt-2">
+      <div class="container p-2">
+        <div class="row p-2 rounded shadow" style="background-color: #53354A;">
+          <div class="form-check" id="optionContainer">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="container">
+      <div class="text-center d-grid gap-2 col-md-6 col-sm-12 mx-auto">
+        <button type="button" id="btn" class="btn btn-lg fw-bold" disabled
+          style="background-color: #E74C3C; color: white;">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Result Display Section -->
+<div style="display: none" id="resultDisplay">
+  <div class="container p-1">
+    <div class="p-5 bg-warning text-center mt-5 rounded" style="background-color: #2E4053;">
+      <h1 class="text-white fw-bold">Your Result</h1>
+    </div>
+
+    <br />
+
+    <!-- Result Percentage -->
+    <div class="text-center p-5 rounded" style="background-color: #1ABC9C;">
+      <h2 class="text-white fw-bold">Your percentage is 
+        <span class="text-white fw-bold" id="percentage"></span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Restart Button -->
+  <div class="container">
+    <div class="text-center d-grid gap-2 col-md-3 col-sm-6 mt-2 mx-auto">
+      <button type="button" id="reset" class="btn btn-lg fw-bold" style="background-color: #E74C3C; color: white;">
+        Restart Quiz
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
