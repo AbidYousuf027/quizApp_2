@@ -17,6 +17,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%  100%;
+    margin-top: 20px;
 }
 
 
@@ -49,42 +50,140 @@
   .shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-   
-@media (max-width: 768px) {
-    #quizContainer h4 {
-      font-size: 1.25rem; 
-    }
-    
-    .container {
-      padding: 1rem; 
-    }
-  
-    .btn {
-      font-size: 1rem; 
-    }
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+
+
+#quizContainer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+
+
+h2, h3, h4 {
+  margin: 0;
+}
+
+
+#optionContainer {
+  margin-top: 15px;
+}
+
+.form-check-label {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+
+#resultDisplay {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+
+
+@media (max-width: 576px) {
+  #quizContainer, #resultDisplay {
+    padding: 10px;
   }
-  
-  @media (max-width: 576px) {
-    #quizheader h2 {
-      font-size: 1.5rem;
-    }
-  
-    .fs-1 {
-      font-size: 1.5rem;
-    }
+
+  h2, h3 {
+    font-size: 1.5rem;
   }
-  
-  @media (max-width: 576px) {
-    h4 {
-      font-size: 1rem;
-    }
-    .btn {
-      width: 100%; 
-    }
+
+  h4 {
+    font-size: 1.2rem;
   }
+
+  #displayQuestion {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #minutes, #seconds {
+    font-size: 1.5rem;
+  }
+
+  .form-check-label {
+    font-size: 1rem;
+  }
+
   
+  .btn-lg {
+    width: 100%;
+  }
+}
 
 
+@media (min-width: 577px) and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  #quizContainer, #resultDisplay {
+    max-width: 700px;
+  }
+
+  h2, h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  .form-check-label {
+    font-size: 1.1rem;
+  }
+
+  #minutes, #seconds {
+    font-size: 1.75rem;
+  }
+
+  .btn-lg {
+    font-size: 1.1rem;
+  }
+}
 
 
- 
+@media (min-width: 769px) {
+  #quizContainer {
+    padding: 40px;
+  }
+
+  .playBtn {
+    width: auto;
+    max-width: 300px;
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .btn-lg {
+    font-size: 1.2rem;
+  }
+
+  #minutes, #seconds {
+    font-size: 2rem;
+  }
+}

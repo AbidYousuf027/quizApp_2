@@ -104,6 +104,9 @@ let htmlQuiz = [
   let playBtn = document.getElementById("play");
   let imgCont = document.getElementById("imgCont");
   
+
+  let startBtn = document.getElementById("startQuiz")
+ 
   let quizContainer = document.getElementById("quizContainer");
   let minutes = document.getElementById("minutes");
   let seconds = document.getElementById("seconds");
@@ -116,7 +119,7 @@ let htmlQuiz = [
   let totalQue = document.getElementById("totalQueNum");
   let nextBtn = document.getElementById("btn");
   let resetBtn = document.getElementById("reset");
-  let h4 = document.querySelector("h4");
+  let msg = document.getElementById("msg");
   
   let started = false;
   let indx = 0;
@@ -126,11 +129,35 @@ let htmlQuiz = [
   let sec = 0;
   let interval;
   
+  minutes.innerHTML = "15 ";
+  seconds.innerHTML = "00 ";
+
+
+
+
   playBtn.addEventListener("click", () => {
     quizContainer.style.display = "block";
     imgCont.style.display = "none";
   });
   
+  startBtn.addEventListener("click" , () =>{
+    if (started === false) {
+      started = true;
+  
+      start();
+      
+      
+      msg.innerHTML = `
+      <div class="fw-bold text-center p-3 mb-1" style="background-color: #f8f9fa; border: 2px solid #007bff; border-radius: 8px; color: #343a40;">
+        <h4>Quiz is started<br><span style="font-size: 1.2rem; font-weight: normal;">Duration: 15:00 Minutes</span></h4>
+      </div>`;
+    
+    
+    }
+  })
+
+
+
   function start() {
     interval = setInterval(function () {
       if (sec > 0) {
@@ -143,8 +170,8 @@ let htmlQuiz = [
       let formattedSec = sec < 10 ? "0" + sec : sec;
       let formattedMin = min < 10 ? "0" + min : min;
   
-      seconds.innerHTML = formattedSec + "<small> sec</small>";
-      minutes.innerHTML = formattedMin + "<small> min</small>";
+      seconds.innerHTML = formattedSec + "<small></small>";
+      minutes.innerHTML = formattedMin + "<small></small>";
   
       if (min === 0 && sec === 0) {
         clearInterval(interval);
@@ -153,36 +180,16 @@ let htmlQuiz = [
       }
     }, 1000);
   }
-  // This EventListener  is apply for Touch Screen any devices
+
   
-  document.addEventListener("touchstart", function (event) {
-    if (started === false) {
-      started = true;
-  
-      start();
-      h4.innerHTML = "Quiz is started";
-    } else {
-      started = false;
-    }
-   
-  });
-  
-  
-  document.addEventListener("keypress", function (event) {
-    if (started === false) {
-      started = true;
-  
-      start();
-      h4.innerHTML = "Quiz is started";
-    }
-  });
+
   options.addEventListener("click", function (event) {
     if (started === true) {
       if (event.target.type === "radio") {
         nextBtn.disabled = false;
       }
     } else {
-      alert("Please press any key to start the quiz first.");
+      alert("Please press start quiz button first.");
     }
   });
   
@@ -196,13 +203,14 @@ let htmlQuiz = [
   
     for (let optionsValue of htmlQuiz[indx].options) {
       options.innerHTML += `
-             <div>
-          <h4 class="w-75 mt-2 p-3 rounded" style="background-color: #4A0E33; color: #F4F6F7;">
-            <input class="form-check-input m-1 me-3" style="cursor: pointer" type="radio" value="${optionsValue}" name="flexRadioDefault">
-            <label class="form-check-label text-light fw-bold" style="cursor: pointer">${optionsValue}</label>
-          </h4>
-        </div>
-      `;
+  <div>
+    <h4 class="w-75 mt-2 p-3 rounded" style="background-color: #4A0E33; color: #F4F6F7; display: flex; align-items: center;">
+      <input id="option-${optionsValue}" class="form-check-input m-1 me-3" style="cursor: pointer" type="radio" value="${optionsValue}" name="flexRadioDefault">
+      <label class="form-check-label text-light fw-bold" for="option-${optionsValue}" style="cursor: pointer; margin: 0;">${optionsValue}</label>
+    </h4>
+  </div>
+`;
+
     }
   
     indx++;
@@ -269,9 +277,9 @@ let htmlQuiz = [
   
     nextBtn.setAttribute("disabled", true);
   
-    h4.innerHTML = "Press any key to start the quiz";
-    minutes.innerHTML = "15<small>m</small>";
-    seconds.innerHTML = "00<small>s</small>";
+   
+    minutes.innerHTML = "15 ";
+    seconds.innerHTML = "00 ";
   }
   
   resetBtn.addEventListener("click", () => {
